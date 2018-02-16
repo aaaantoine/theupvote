@@ -1,7 +1,7 @@
 <?php
 /*
-Plugin Name: The Upvote
-Description: Manage episodes and topics and provide voting functionality for The Upvote.
+Plugin Name: The Upvote - Post Format Helper
+Description: Provides a collection of shortcodes to format posts for The Upvote.
 Author: Anthony Scire
 */
 
@@ -74,7 +74,10 @@ function sql_create_meta($table_name, $columns, $charset_collate) {
 }
 
 function register_hooks() {
-    register_activation_hook(__FILE__, 'upvote\\install\\install');
+    require_once('shortcodes.php');
+    add_shortcode('uv-container', 'upvote\\shortcodes\\uv_container');
+    add_shortcode('uv-video', 'upvote\\shortcodes\\uv_video');
+    add_shortcode('uv-list', 'upvote\\shortcodes\\uv_list');
 }
 
 register_hooks();
