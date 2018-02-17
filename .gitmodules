@@ -1,0 +1,3 @@
+[submodule "wp-theme"]
+	path = wp-theme
+	url = ./wp-theme
